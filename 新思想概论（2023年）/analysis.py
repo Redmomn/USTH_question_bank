@@ -15,6 +15,7 @@ def sw_dict_to_list(filename):
         a = json.load(fp=f)
     return a['BusinessData']['BC_xcqm_tkb_SC']
 
+# 选项复选框
 def xxzh(i):
     t_list=[]
     try:
@@ -30,7 +31,7 @@ def xxzh(i):
         pass
     return t_list
 
-title_list = raw_json('a1.json')
+title_list = raw_json('单选.json')
 mdfile = '单选.md'
 try:
     f = open(mdfile,mode='r',encoding='utf-8')
@@ -40,5 +41,5 @@ except Exception:
         pass
 with open(mdfile,mode='a',encoding='utf-8') as f:
     for i in title_list:
-        f.write(f"{i['xh']}. {i['wt']}\n")
+        f.write(f"{i['xh']}. {i['wt']}\n") # 题目
         f.writelines(xxzh(i))
