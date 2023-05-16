@@ -40,6 +40,10 @@ except Exception:
     with open(mdfile,mode='w',encoding='utf-8'):
         pass
 with open(mdfile,mode='a',encoding='utf-8') as f:
+    s = 1
     for i in title_list:
-        f.write(f"{i['xh']}. {i['wt']}\n") # 题目
+        if s>=99:
+            s=1
+        f.write(f"{s}. {i['wt']}\n") # 题目
         f.writelines(xxzh(i))
+        s+=1
