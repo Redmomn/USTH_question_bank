@@ -10,7 +10,7 @@ with open(file='a1.json',mode='r',encoding='utf-8') as f:
 b = a['text']
 b = json.loads(b) #去多余引号
 
-print(len(b['BusinessData']['BC_xcqm_tkb_SC']))
+print(len(b['BusinessData']['BC_xcqm_tkb_MC']))
 # b = json.loads(str(a))
 
 with open(file='a2.json',mode='w',encoding='utf-8') as f:
