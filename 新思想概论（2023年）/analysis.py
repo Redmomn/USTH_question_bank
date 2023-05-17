@@ -101,12 +101,46 @@ def MC_md(title_list):
             f.writelines(MC_xxzh(i))
             s+=1
 
+# 多选复选框
+def TF_xxzh(i):
+    t_list=[]
+    try:
+        if i['da'] == '对':
+            t_list.append('    - [x] 对\n')
+            t_list.append('    - [ ] 错\n')
+        else:
+            t_list.append('    - [ ] 对\n')
+            t_list.append('    - [x] 错\n')
+    except Exception:
+        pass
+    return t_list
+
+# 多选写入文件
+def TF_md(title_list):
+    mdfile = '判断.md'
+    try:
+        f = open(mdfile,mode='r',encoding='utf-8')
+        f.close()
+    except Exception:
+        with open(mdfile,mode='w',encoding='utf-8'):
+            pass
+    with open(mdfile,mode='a',encoding='utf-8') as f:
+        s = 1
+        for i in title_list:
+            if s>=99:
+                s=1
+            f.write(f"{s}. {i['wt']}\n") # 题目
+            f.writelines(TF_xxzh(i))
+            s+=1
+
 def main():
     title_list,tittle_type = raw_json('example.json')
     if tittle_type == 0:
         SC_md(title_list)
     if tittle_type == 1:
         MC_md(title_list)
+    if tittle_type == 2:
+        TF_md(title_list)
 
 if __name__ == '__main__':
     main()
