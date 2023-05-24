@@ -46,7 +46,7 @@ def SC_xxzh(i):
 def SC_md(title_list):
     mdfile = '单选.md'
     try:
-        f = open(mdfile,mode='r',encoding='utf-8')
+        f = open(mdfile,mode='w',encoding='utf-8')
         f.close()
     except Exception:
         with open(mdfile,mode='w',encoding='utf-8'):
@@ -87,7 +87,7 @@ def MC_xxzh(i):
 def MC_md(title_list):
     mdfile = '多选.md'
     try:
-        f = open(mdfile,mode='r',encoding='utf-8')
+        f = open(mdfile,mode='w',encoding='utf-8')
         f.close()
     except Exception:
         with open(mdfile,mode='w',encoding='utf-8'):
@@ -115,11 +115,11 @@ def TF_xxzh(i):
         pass
     return t_list
 
-# 多选写入文件
+# 判断写入文件
 def TF_md(title_list):
     mdfile = '判断.md'
     try:
-        f = open(mdfile,mode='r',encoding='utf-8')
+        f = open(mdfile,mode='w',encoding='utf-8')
         f.close()
     except Exception:
         with open(mdfile,mode='w',encoding='utf-8'):
@@ -137,10 +137,19 @@ def main():
     title_list,tittle_type = raw_json('example.json')
     if tittle_type == 0:
         SC_md(title_list)
+        with open('example.json',mode='r',encoding='utf-8') as f:
+            with open('单选.json',mode='w',encoding='utf-8') as fp:
+                fp.write(f.read())
     if tittle_type == 1:
         MC_md(title_list)
+        with open('example.json',mode='r',encoding='utf-8') as f:
+            with open('多选.json',mode='w',encoding='utf-8') as fp:
+                fp.write(f.read())
     if tittle_type == 2:
         TF_md(title_list)
+        with open('example.json',mode='r',encoding='utf-8') as f:
+            with open('判断.json',mode='w',encoding='utf-8') as fp:
+                fp.write(f.read())
 
 if __name__ == '__main__':
     main()
