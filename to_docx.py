@@ -8,7 +8,11 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 filePath = './1003毛概'
 jsonFileList = ["单选.json","多选.json","判断.json"]
 
-docxPath1 = './word/毛概'
+# 保存docs的文件夹名称
+wordPath = ''
+
+docxPath1 = f'./word/{wordPath}'
+docsPath2 = f'/docs/.vuepress/public/word/{wordPath}'
 os.makedirs(docxPath1)
 
 # Document('./word/test1.docx')

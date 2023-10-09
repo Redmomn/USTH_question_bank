@@ -1,0 +1,20 @@
+{
+  "name": "usth-question-bank",
+  "version": "1.0.0",
+  "description": "题库",
+  "main": "index.js",
+  "repository": "https://github.com/Redmomn/USTH_question_bank",
+  "author": "Redmomn <>",
+  "license": "CC-BY-SA-4.0",
+  "devDependencies": {
+    "@vuepress/plugin-docsearch": "^2.0.0-beta.35",
+    "@vuepress/plugin-google-analytics": "^2.0.0-beta.35",
+    "@vuepress/plugin-pwa": "^2.0.0-beta.35",
+    "@vuepress/plugin-pwa-popup": "^2.0.0-beta.35",
+    "vuepress": "^2.0.0-beta.35"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}

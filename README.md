@@ -4,7 +4,7 @@
 黑科大马克思学院练习系统的题库
 
 ### 使用说明
-~~我也不知道~~
+来[gitee仓库](https://gitee.com/Redmonm/question-bank)提交issue即可
 
 #### 参与贡献
 
