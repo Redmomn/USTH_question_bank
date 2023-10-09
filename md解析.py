@@ -6,13 +6,13 @@ import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 # json文件存放的路径，末尾加上/
-filePath = "./raw_json/新思想（2023）/"
+filePath = "./raw_json/毛概/"
 
 # 输出的md文件存放的路径，末尾加上/
-outFilePath = "./docs/1033新思想概论（2023年）/"
+outFilePath = "./docs/1003毛概/"
 
 # 课程名称
-courseName = "新思想概论（2023年）"
+courseName = "毛概"
 
 jsonFileList = ["单选.json", "多选.json", "判断.json"]
 mdFileList = ["单选.md", "多选.md", "判断.md"]
@@ -73,8 +73,8 @@ def SC_md(title_list):
     with open(mdfile, mode="a", encoding="utf-8") as f:
         s = 1
         for i in title_list:
-            # if s >= 99:
-            #     s = 1
+            if s >= 99:
+                s = 1
             f.write(f"{s}. {i['wt']}\n")  # 题目
             f.writelines(SC_xxzh(i))
             s += 1
@@ -116,8 +116,8 @@ def MC_md(title_list):
     with open(mdfile, mode="a", encoding="utf-8") as f:
         s = 1
         for i in title_list:
-            # if s >= 99:
-            #     s = 1
+            if s >= 99:
+                s = 1
             f.write(f"{s}. {i['wt']}\n")  # 题目
             f.writelines(MC_xxzh(i))
             s += 1
@@ -150,8 +150,8 @@ def TF_md(title_list):
     with open(mdfile, mode="a", encoding="utf-8") as f:
         s = 1
         for i in title_list:
-            # if s >= 99:
-            #     s = 1
+            if s >= 99:
+                s = 1
             f.write(f"{s}. {i['wt']}\n")  # 题目
             f.writelines(TF_xxzh(i))
             s += 1
