@@ -2,9 +2,9 @@ name: 需要新的题库
 description: 请求添加新题库，需要上传单选、多选、选择第一题的题目及答案（截图或文字描述均可）
 title: "[new sucject]："
 labels: ["requirement"]
-body: 
+body:
   - type: markdown
-    attributes: 
+    attributes:
       valve: |
         上传你需要的题库的单选、多选、选择第一题的题目及答案（截图或文字描述均可）
 
