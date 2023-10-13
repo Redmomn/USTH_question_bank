@@ -7,11 +7,12 @@
   "author": "Redmomn <>",
   "license": "CC-BY-SA-4.0",
   "devDependencies": {
-    "@vuepress/plugin-docsearch": "^2.0.0-beta.35",
-    "@vuepress/plugin-google-analytics": "^2.0.0-beta.35",
-    "@vuepress/plugin-pwa": "^2.0.0-beta.35",
-    "@vuepress/plugin-pwa-popup": "^2.0.0-beta.35",
-    "vuepress": "^2.0.0-beta.35"
+    "@vuepress/plugin-back-to-top": "^2.0.0-beta.67",
+    "@vuepress/plugin-google-analytics": "^2.0.0-beta.67",
+    "@vuepress/plugin-pwa": "^2.0.0-beta.67",
+    "@vuepress/plugin-pwa-popup": "^2.0.0-beta.67",
+    "@vuepress/plugin-search": "^2.0.0-beta.67",
+    "vuepress": "^2.0.0-beta.67"
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",

@@ -1,7 +1,16 @@
 import { defineUserConfig } from 'vuepress'
+import { defaultTheme } from 'vuepress'
+
+import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
+import { pwaPlugin } from '@vuepress/plugin-pwa'
+import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup'
+import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
+import { searchPlugin } from '@vuepress/plugin-search'
+
 import type { DefaultThemeOptions } from 'vuepress'
 
-export default defineUserConfig<DefaultThemeOptions>({
+
+export default defineUserConfig({
     // 站点配置
     lang: 'zh-CN',
     title: '题库',
@@ -10,42 +19,33 @@ export default defineUserConfig<DefaultThemeOptions>({
     head: [
         ['link', { rel: 'icon', href: '/images/www/宁宁.jpg' }]
     ],
+
+    // 插件配置
     plugins: [
-        ['@vuepress/back-to-top'],
-        [
-            '@vuepress/pwa',
-            {
-                skipWaiting: true
-            }
-        ],
-        [
-            '@vuepress/plugin-pwa-popup',
-            {
-                locales: {
-                    '/': {
-                        message: '发现新内容可用',
-                        buttonText: '刷新',
-                    }
+        backToTopPlugin(),
+
+        pwaPlugin({
+            skipWaiting: true
+        }),
+
+        pwaPopupPlugin({
+            locales: {
+                '/': {
+                    message: '发现新内容可用',
+                    buttonText: '刷新',
                 }
             }
-        ],
-        [
-            '@vuepress/plugin-google-analytics',
-            {
-                id: 'G-DC97NQD68V'
-            }
-        ],
-        [
-            "@vuepress/plugin-docsearch",
-            {
+        }),
 
-            }
-        ]
+        googleAnalyticsPlugin({
+            id: 'G-DC97NQD68V'
+        }),
+
+        searchPlugin()
     ],
 
     // 主题和它的配置
-    theme: '@vuepress/theme-default',
-    themeConfig: {
+    theme: defaultTheme({
         repo: 'Redmomn/USTH_question_bank',
         docsRepo: 'Redmomn/USTH_question_bank',
         docsBranch: 'master',
@@ -54,6 +54,7 @@ export default defineUserConfig<DefaultThemeOptions>({
         lastUpdated: true,
         lastUpdatedText: '上一次编辑',
         contributors: true,
+        contributorsText: '贡献者',
         tip: "提示",
         warning: "注意",
         danger: "警告",
@@ -67,9 +68,9 @@ export default defineUserConfig<DefaultThemeOptions>({
                     { text: '新思想（2023）', link: '/1033新思想概论（2023年）/新思想概论（2023年）.md' }
                 ]
             },
-            {text: '常见问题', link: '/question/'}
+            { text: '常见问题', link: '/question/' }
         ],
         sidebar: "auto",
-    },
+    }),
 
 })
