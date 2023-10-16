@@ -6,13 +6,20 @@ import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 # json文件存放的路径，末尾加上/
-filePath = "./raw_json/毛概/"
+### 此项需修改
+filePath = "./raw_json/中国近现代史纲要/"
 
 # 输出的md文件存放的路径，末尾加上/
-outFilePath = "./docs/1003毛概/"
+### 此项需修改
+outFilePath = "./docs/tiku/1005中国近现代史纲要/"
+try:
+    os.makedirs(outFilePath)
+except:
+    pass
 
 # 课程名称
-courseName = "毛概"
+### 此项也需要修改
+courseName = "中国近现代史纲要"
 
 jsonFileList = ["单选.json", "多选.json", "判断.json"]
 mdFileList = ["单选.md", "多选.md", "判断.md"]

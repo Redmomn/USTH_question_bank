@@ -5,15 +5,21 @@ import json
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-filePath = './1003毛概'
+# 题目原始json文件存放路径
+### 此项需修改
+filePath = './raw_json/中国近现代史纲要'
 jsonFileList = ["单选.json","多选.json","判断.json"]
 
 # 保存docs的文件夹名称
-wordPath = ''
+### 此项需修改
+wordPath = '中国近现代史纲要'
 
 docxPath1 = f'./word/{wordPath}'
 docsPath2 = f'/docs/.vuepress/public/word/{wordPath}'
-os.makedirs(docxPath1)
+try:
+    os.makedirs(docxPath1)
+except:
+    pass
 
 # Document('./word/test1.docx')
 
