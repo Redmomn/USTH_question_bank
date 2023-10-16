@@ -4,12 +4,12 @@ heroImage: /images/www/ciallo.png
 tagline: Ciallo～(∠・ω< )⌒☆
 
 actions:
-  - text: 仓库地址
+  - text: 项目简介
     type: secondary
-    link: https://github.com/Redmomn/USTH_question_bank
+    link: /guide/
   - text: 快速上手🚀
     type: primary
-    link: /guide/
+    link: /guide/quick_start.md
 
 features:
 - title: 简洁至上
