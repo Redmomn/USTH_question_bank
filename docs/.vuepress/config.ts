@@ -7,6 +7,8 @@ import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup'
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
 import { searchPlugin } from '@vuepress/plugin-search'
 
+import { tasklist } from "@mdit/plugin-tasklist";
+
 import type { DefaultThemeOptions } from 'vuepress'
 
 
@@ -19,6 +21,12 @@ export default defineUserConfig({
     head: [
         ['link', { rel: 'icon', href: '/images/www/宁宁.jpg' }]
     ],
+
+    // 给markdown添加解析复选框配置
+    extendsMarkdown: (md) => {
+        md.use(tasklist, {
+          });
+    },
 
     // 插件配置
     plugins: [
@@ -66,7 +74,7 @@ export default defineUserConfig({
                     { text: '马原', link: '/tiku/1001马克思主义基本原理概论/马克思主义基本原理概论.md' },
                     { text: '毛概', link: '/tiku/1003毛概/毛概.md' },
                     { text: '新思想（2023）', link: '/tiku/1033新思想概论（2023年）/新思想概论（2023年）.md' },
-                    {text:'近代史',link:'/tiku/1005中国近现代史纲要/中国近现代史纲要.md'}
+                    { text: '近代史', link: '/tiku/1005中国近现代史纲要/中国近现代史纲要.md' }
                 ]
             },
             { text: '常见问题', link: '/question/' }

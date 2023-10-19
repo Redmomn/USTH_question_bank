@@ -1164,6 +1164,13 @@
   resolved "https://registry.npmmirror.com/@mdit-vue/types/-/types-0.12.0.tgz#096ff57d3590d076f7d7561dbc9956fb0bb89fe1"
   integrity sha512-mrC4y8n88BYvgcgzq9bvTlDgFyi2zuvzmPilRvRc3Uz1iIvq8mDhxJ0rHKFUNzPEScpDvJdIujqiDrulMqiudA==
 
+"@mdit/plugin-tasklist@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.npmmirror.com/@mdit/plugin-tasklist/-/plugin-tasklist-0.5.0.tgz#26673d46f01f256abff92748a3c48a61a2ab2de8"
+  integrity sha512-Xa3KBZfC3QJdOJo3CJvAFIffIELohu+D9UgJDFecG35nFJ+DsOdAAN44B+rv9WgnqSyZaVb3m4SCQQLflS58Ow==
+  dependencies:
+    "@types/markdown-it" "^13.0.2"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmmirror.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -1280,6 +1287,14 @@
   version "13.0.2"
   resolved "https://registry.npmmirror.com/@types/markdown-it/-/markdown-it-13.0.2.tgz#1557e77789fc86e93fd4b8f0f8f8535ec97a8518"
   integrity sha512-Tla7hH9oeXHOlJyBFdoqV61xWE9FZf/y2g+gFVwQ2vE1/eBzjUno5JCd3Hdb5oATve5OF6xNjZ/4VIZhVVx+hA==
+  dependencies:
+    "@types/linkify-it" "*"
+    "@types/mdurl" "*"
+
+"@types/markdown-it@^13.0.2":
+  version "13.0.4"
+  resolved "https://registry.npmmirror.com/@types/markdown-it/-/markdown-it-13.0.4.tgz#33ede9fe0f23f62f39f83d7530ba69762b0bfd35"
+  integrity sha512-FAIUdEXrCDnQmAAmJC+UeW/3p0eCI4QZ/+W0lX/h83VD3v78IgTFYftjnAeXS8H0g4PFQCgipc51cQDA8tjgLw==
   dependencies:
     "@types/linkify-it" "*"
     "@types/mdurl" "*"
