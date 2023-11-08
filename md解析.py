@@ -1,28 +1,60 @@
 # 快速解析题库至docs文件夹
 
-import json
-import os
+import json, os, requests
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
+# 课程名称
+### 此项也需要修改
+courseName = "思想道德与法治"
+# 课程编码
+kcbm = 1006
+
 # json文件存放的路径，末尾加上/
-### 此项需修改
-filePath = "./raw_json/中国近现代史纲要/"
+filePath = f"./raw_json/{courseName}/"
 
 # 输出的md文件存放的路径，末尾加上/
-### 此项需修改
-outFilePath = "./docs/tiku/1005中国近现代史纲要/"
+outFilePath = f"./docs/tiku/{kcbm}{courseName}/"
 try:
     os.makedirs(outFilePath)
+    os.makedirs(filePath)
 except:
     pass
 
-# 课程名称
-### 此项也需要修改
-courseName = "中国近现代史纲要"
+url = "https://myzxks.usth.edu.cn/ServiceEntryForJson.ashx"
 
 jsonFileList = ["单选.json", "多选.json", "判断.json"]
 mdFileList = ["单选.md", "多选.md", "判断.md"]
+
+# 分别是单选，多选，判断的bpo
+BPONameList = ["BPO_32342", "BPO_32441", "BPO_32442"]
+
+
+# 爬文件下来
+def downloadJson():
+    for i in range(3):
+        BPOName = BPONameList[i]
+
+        headers = {"Content-Type": "application/json"}
+
+        data = {
+            "BPOName": f"{BPOName}",
+            "MethodName": "BusiViewStringJson",
+            "Parameters": {"urlParams": 1},
+            "PUrl": {"kcbm": f"{kcbm}"},
+            "ClassFullName": "",
+            "GloalServiceName": "",
+            "openid": "",
+            "fRegisterBPO": "true",
+        }
+
+        res = requests.post(url, data=json.dumps(data), headers=headers)
+
+        with open(filePath + jsonFileList[i], mode="w", encoding="utf-8") as fp:
+            fp.write(res.text)
+        print(i)
+
+    print("文件下载完成")
 
 
 # 原始json整理
@@ -165,6 +197,7 @@ def TF_md(title_list):
 
 
 def main():
+    downloadJson()
     ### 转换md
     for fileName in jsonFileList:
         title_list, tittle_type = raw_json(filePath + fileName)

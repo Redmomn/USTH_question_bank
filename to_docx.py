@@ -7,12 +7,12 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 # 题目原始json文件存放路径
 ### 此项需修改
-filePath = './raw_json/中国近现代史纲要'
+filePath = './raw_json/思想道德与法治'
 jsonFileList = ["单选.json","多选.json","判断.json"]
 
 # 保存docs的文件夹名称
 ### 此项需修改
-wordPath = '中国近现代史纲要'
+wordPath = '思想道德与法治'
 
 docxPath1 = f'./word/{wordPath}'
 docsPath2 = f'/docs/.vuepress/public/word/{wordPath}'
