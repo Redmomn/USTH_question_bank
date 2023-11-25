@@ -11,7 +11,7 @@ courseName = "思想道德与法治"
 kcbm = 1006
 
 # json文件存放的路径，末尾加上/
-filePath = f"./raw_json/{courseName}/"
+filePath = f"./raw_json/{kcbm}{courseName}/"
 
 # 输出的md文件存放的路径，末尾加上/
 outFilePath = f"./docs/tiku/{kcbm}{courseName}/"
