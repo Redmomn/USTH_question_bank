@@ -25,7 +25,7 @@ export default defineUserConfig({
     // 给markdown添加解析复选框配置
     extendsMarkdown: (md) => {
         md.use(tasklist, {
-          });
+        });
     },
 
     // 插件配置
@@ -75,7 +75,8 @@ export default defineUserConfig({
                     { text: '毛概', link: '/tiku/1003毛概/毛概.md' },
                     { text: '新思想（2023）', link: '/tiku/1033新思想概论（2023年）/新思想概论（2023年）.md' },
                     { text: '近代史', link: '/tiku/1005中国近现代史纲要/中国近现代史纲要.md' },
-                    {text:'思想道德与法治',link:'/tiku/1006思想道德与法治/思想道德与法治.md'}
+                    { text: '思想道德与法治', link: '/tiku/1006思想道德与法治/思想道德与法治.md' },
+                    { text: '四史', link: '/tiku/1007四史/四史.md' }
                 ]
             },
             { text: '常见问题', link: '/question/' }
